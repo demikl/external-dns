@@ -198,7 +198,7 @@ func (im *TXTRegistry) generateTXTRecord(r *endpoint.Endpoint) []*endpoint.Endpo
 	txtNew := endpoint.NewEndpoint(im.mapper.toNewTXTName(r.DNSName, r.RecordType), endpoint.RecordTypeTXT, r.Labels.Serialize(true)).WithSetIdentifier(r.SetIdentifier)
 	txtNew.ProviderSpecific = r.ProviderSpecific
 
-	return []*endpoint.Endpoint{txt, txtNew}
+	return []*endpoint.Endpoint{txtNew,}
 }
 
 // ApplyChanges updates dns provider with the changes
